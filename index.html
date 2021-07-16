@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solving Elementary Coding Challenges</title>
+</head>
+<body>
+  <h1>Solving Elementary Coding Challenges</h1>
+  <button id="btn">Enter any number</button>
+  <button id="btn1">Sum of Multiples of 3 and 5</button>
+  <button id="btn2">Choose Either Sum or Product of Any Number</button>
+  <button id="btn3">multiplication table for numbers up to 12</button>
+  <button id="btn4">Prime Numbers From 20 and above:</button>
+  <button id="btn5">The Next 20 Leap Year:</button>
+ 
+
+  <script>
+    let btn = document.getElementById("btn");
+    let btn1 = document.getElementById("btn1");
+    let btn2 = document.getElementById("btn2");
+    let btn3 = document.getElementById("btn3");
+    let btn4 = document.getElementById("btn4");
+    let btn5 = document.getElementById("btn5");
+
+
+    btn.addEventListener("click", getSumN);
+    btn1.addEventListener("click", getSumOfMultiples);
+    btn2.addEventListener("click", sumOrProduct);
+    btn3.addEventListener("click", multiplication);
+    // btn4.addEventListener("click", primeNumber);
+    btn5.addEventListener("click", leapYear);
+
+
+    function getSumN(){
+   
+   let n = parseInt(prompt("Please Enter Any Number: "));
+   let sum = 0;
+   for (let i = 1; i <= n; i++ ){
+      sum = sum + i;
+    }
+    document.write(`The sum of ${n} is ${sum}`);
+    }
+  
+    function getSumOfMultiples(){
+   
+    let n = parseInt(prompt("Please Enter Any Number: "));
+    let sum = 0;
+   for (let i = 1; i <= n; i++ ){
+    if (i % 3 == 0 || i % 5 === 0) {
+      sum = sum + i;
+    }
+
+    }
+    document.write(`The sum of ${n} is ${sum}`);
+    }
+  
+    function sumOrProduct(){
+     let n = parseInt(prompt("Please Enter Any Number: "));
+      let operator = parseInt(prompt("Please Enter 1 for 'sum' and 2 for 'product' "));
+       let product =1
+      let sum = 0;
+      for (i =1; i <= n; i++){
+        if(operator == 1){
+          sum = sum + i;
+
+           }else if(operator == 2){
+          product = n * i;
+          print(`The product of ${n} is ${product}`);
+         
+        }else{
+          ("Enter Either 1 0r 2");
+        }
+      }
+     document.write(`The sum of ${n} is ${sum}`);
+    
+    }
+
+    function multiplication(){
+      let userInput = parseInt(prompt("Please Enter any Number"));
+      document.write(`Multiples of ${userInput}:  <br>`) ;
+
+      for(let i = 1; i<= 12; i++){
+        product = userInput * i;
+
+        
+
+        document.write(`${userInput}  * ${i} = ${product} <br>`);
+        
+      }
+    }
+  
+  {
+    
+
+    function primeNumber() {
+      let enterNumber = prompt("Enter number above 20: ");
+  // var yearsPrinted = 1;
+var currentYear = 2021;
+    while (i <= enterNumber) { 
+        if ((currentYear % 4 === 0) && (!((currentYear % 100===0) && (currentYear % 400 !== 0)))) {
+            //can we simplify the line above?
+            document.write(currentYear + "<br>");
+            yearsPrinted++;
+            currentYear++;
+        } else {
+            currentYear++;
+        }
+    }       
+}
+
+  }
+
+ 
+
+ 
+function leapYear() {
+  var yearsPrinted = 1;
+var currentYear = 2021;
+    while (yearsPrinted <= 20) { 
+        if ((currentYear % 4 === 0) && (!((currentYear % 100===0) && (currentYear % 400 !== 0)))) {
+            //can we simplify the line above?
+            document.write(currentYear + "<br>");
+            yearsPrinted++;
+            currentYear++;
+        } else {
+            currentYear++;
+        }
+    }       
+}
+
+  </script>
+</body>
+</html>
